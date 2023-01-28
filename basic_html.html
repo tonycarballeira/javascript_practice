@@ -17,11 +17,15 @@
 
 			<button class="myButton" onclick="sayHello()">Click Me!</button>
 
-			<form onsubmit="golfScore()">
+			<div>
 				<input class="golf_form_field" type="text" placeholder="enter par" id="par">
 				<input class="golf_form_field" type="text" placeholder="enter strokes" id="strokes">
-				<input type="submit">
-			</form>
+				<input type="submit" onclick="golfScore()">
+			</div>
+			
+			<p>Your Result:</p>
+			<p id="result"></p>
+
 
 		</body>
 		<script src="code.js"></script>

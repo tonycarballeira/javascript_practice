@@ -1,34 +1,47 @@
-const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+ names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
 
-function golfScore() {
-	const par = document.getElementById('par').value;
-	const strokes = document.getElementById('strokes').value;
+function golfScore(event) {
+	
+ par = document.getElementById('par').value;
+ strokes = document.getElementById('strokes').value;
+ score = par - strokes;
+ phrase = "";
 
-  const score = par - strokes;
   if (strokes == 1){
-    alert(names[0]);
+    	console.log(names[0]);
+	 	phrase = names[0];
   } else if (score >= 2){
-    alert(names[1]) ;
+    	console.log(names[1]);
+	 	phrase = names[1];
   } else if (score == 1){
-    alert(names[2]) ;
+    	console.log(names[2]);
+	 	phrase = names[2];
   } else if (score == 0){
-    alert(names[3]) ;
+    	console.log(names[3]);
+	 	phrase = names[3];
   }else if (score == -1){
-    alert(names[4]) ;
+    	console.log(names[4]);
+	 	phrase = names[4];
   } else if (score == -2){
-    alert(names[5]) ;
+    	console.log(names[5]);
+	 	phrase = names[5];
   }else if (score <= -3){
-    alert(names[6]) ;
+    	console.log(names[6]);
+	 	phrase = names[6];
   }else{
-      alert("Change Me");
+      	console.log("Change Me");
+	 	phrase = "Change Me";
   }
-
- console.log(par);
- 
+  	console.log(phrase);
+ result = document.getElementById('result');
+ popo = document.createTextNode(phrase);
+	result.appendChild(popo);
+ 	console.log(par);
+	
 }
 
 
 
 function sayHello(){
-	alert("Hello");
+	console.log("Hello");
 }
