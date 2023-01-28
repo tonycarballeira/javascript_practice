@@ -6,28 +6,26 @@ function golfScore() {
 
   const score = par - strokes;
   if (strokes == 1){
-    return "Hole-in-one!";
+    alert(names[0]);
   } else if (score >= 2){
-    return "Eagle";
+    alert(names[1]) ;
   } else if (score == 1){
-    return "Birdie";
+    alert(names[2]) ;
   } else if (score == 0){
-    return "Par";
+    alert(names[3]) ;
   }else if (score == -1){
-    return "Bogey";
+    alert(names[4]) ;
   } else if (score == -2){
-    return "Double Bogey";
+    alert(names[5]) ;
   }else if (score <= -3){
-    return "Go Home!";
+    alert(names[6]) ;
   }else{
-      return "Change Me";
+      alert("Change Me");
   }
 
-  // Only change code above this line
+ console.log(par);
+ 
 }
-
-golfScore(5, 4);
-console.log();
 
 
 
