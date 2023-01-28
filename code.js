@@ -1,9 +1,10 @@
 const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
 
-function golfScore(par, strokes) {
-  // Only change code below this line
+function golfScore() {
+	const par = document.getElementById('par').value;
+	const strokes = document.getElementById('strokes').value;
+
   const score = par - strokes;
-  // par =4  strokes = 6
   if (strokes == 1){
     return "Hole-in-one!";
   } else if (score >= 2){

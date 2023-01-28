@@ -17,9 +17,10 @@
 
 			<button class="myButton" onclick="sayHello()">Click Me!</button>
 
-			<form>
-				<input class="golf_form_field" type="text" placeholder="enter par">
-				<input class="golf_form_field" type="text" placeholder="enter strokes">
+			<form onsubmit="golfScore()">
+				<input class="golf_form_field" type="number" placeholder="enter par" id="par">
+				<input class="golf_form_field" type="number" placeholder="enter strokes" id="strokes">
+				<input type="submit">
 			</form>
 
 		</body>
