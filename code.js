@@ -110,10 +110,127 @@ phoneticLookup("charlie");
 
 function checkObj(obj, checkProp) {
   if (obj.hasOwnProperty(checkProp)){
-    console.log(obj[checkProp]);
+    //console.log(obj[checkProp]);
   } else {
-    console.log("Not Found");
+    //console.log("Not Found");
   }
 }
 
 checkObj({bob:"bob"}, "bob");
+
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold',
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if(prop != 'tracks' && value != ""){
+    records[id][prop] = value;
+    return records;
+  } else if(prop == 'tracks' && records[id]["tracks"] == undefined){
+    records[id][prop] = [value];
+    return records;
+  }else if(prop == 'tracks' && value != ""){
+    records[id][prop].push(value);
+    return records;
+  }else if(value == ""){
+    delete records[id][prop]
+  }else
+  return records;
+}
+
+
+updateRecords(recordCollection, 5439, "artist", 'ABBA');
+
+//recursion
+
+function sum(arr, n) {
+  // Only change code below this line
+
+  if (n <= 0) {
+      return 0;
+    } else {
+      sum(arr, n - 1) + arr[n - 1]
+      
+  }
+  // Only change code above this line
+}
+
+sum([4, 5, 6], 3);
+
+// Setup
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+  let nameFound = [];
+  let noContact = [];
+  let noProp = [];
+
+  for(let i = 0; i < contacts.length; i++){ 
+    if(name == contacts[i].firstName){
+      if(contacts[i].hasOwnProperty(prop)){
+        nameFound.push(contacts[i][prop]);
+        ;
+      } else {
+        noProp.push("No such property");
+      }
+    }  else {
+          noContact.push("No such contact");
+    } 
+    
+  }
+
+  if (nameFound.length > 0){
+    } else if (noProp.length > 0){
+      console.log("No such Property");
+    } else {
+      console.log("No such Contact");
+  }
+  console.log(noProp);
+  console.log(noContact);
+}
+
+lookUpProfile("Akira", "address");
