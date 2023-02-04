@@ -240,3 +240,53 @@ function checkEqual(a, b) {
 }
 
 checkEqual(1, 2);
+
+function checkSign(num) {
+  return (num > 0) ? "positive"
+    : (num < 0) ? "negative"
+    : "zero";
+}
+
+checkSign(10);
+
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+    
+  }
+}
+
+function countdown(n){
+  return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+
+// these two countdown functions are the same
+
+function countdown(n){
+  if (n < 1) {
+    return []
+  } else {
+    return [n].concat(countdown(n-1));
+  }
+}
+
+
+console.log(countdown(5));
+
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum){
+    return [];
+  } else{
+    const countArray = rangeOfNumbers(startNum, endNum - 1)
+    countArray.push(endNum);
+    return countArray;
+  }
+};
+
+console.log(rangeOfNumbers(1, 5));
+
+// this returns an array with a range of numbers between 1 and 5
